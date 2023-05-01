@@ -1,0 +1,10 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>
+    Days:
+    <input type="text" formControlName="days" />
+  </label>
+  <button type="submit" [disabled]="form.invalid">Query</button>
+  <div *ngIf="form.controls['days'].invalid && (form.controls['days'].dirty || form.controls['days'].touched)">
+    Please enter a valid search term (at least 1 character).
+  </div>
+</form>

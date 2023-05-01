@@ -1,0 +1,4 @@
+<div class="container">
+    <app-form (results)="onResults($event)" (cached)="onCached($event)"></app-form>
+    <app-results [results]="results" [cached]="cached"></app-results>
+</div>

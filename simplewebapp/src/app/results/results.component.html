@@ -1,0 +1,25 @@
+<div *ngIf="results">
+  <h2>London:</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.date }}</td>
+        <td>{{ result.day["condition"].text }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="cached">Results were retrieved from cache.</p>
+  <p *ngIf="!cached">Results were retrieved from API call.</p>
+</div>
+<div *ngIf="!results">
+  <p>No results found.</p>
+  <p>{{results}}</p>
+</div>
